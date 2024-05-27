@@ -1,0 +1,29 @@
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 48px;
+}
+
+.ulContainer {
+	background-color: aqua;
+	padding: 48px;
+	border-radius: 12px;
+}
+
+.liContainer {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 8px;
+}
+
+.btn_dlt {
+	border: 1.5px solid transparent;
+	border-radius: 50%;
+	color: aliceblue;
+	background-color: brown;
+	height: 20px;
+	width: 100px;
+}
