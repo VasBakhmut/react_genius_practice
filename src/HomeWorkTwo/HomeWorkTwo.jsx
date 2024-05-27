@@ -2,6 +2,12 @@ import React from 'react'
 import classes from './HomeWorkTwo.module.css'
 
 function HomeWorkTwo({ getInput, list, input, addToDo, deleteElm }) {
+	const handleKeyDown = event => {
+		if (event.key === 'Enter') {
+			addToDo()
+		}
+	}
+
 	return (
 		<div className={classes.container}>
 			<span>Input</span>
@@ -9,22 +15,21 @@ function HomeWorkTwo({ getInput, list, input, addToDo, deleteElm }) {
 				type='text'
 				value={input}
 				onChange={e => getInput(e.target.value)}
+				onKeyDown={handleKeyDown}
 			/>
 			<p>{list.length}</p>
 			<ul className={classes.ulContainer}>
 				{list?.map((toDo, index) => {
 					return (
-						<>
-							<li key={index} className={classes.liContainer}>
-								<h3>{toDo}</h3>
-								<button
-									onClick={() => deleteElm(index)}
-									className={classes.btn_dlt}
-								>
-									delete
-								</button>
-							</li>
-						</>
+						<li key={index} className={classes.liContainer}>
+							<h3>{toDo}</h3>
+							<button
+								onClick={() => deleteElm(index)}
+								className={classes.btn_dlt}
+							>
+								delete
+							</button>
+						</li>
 					)
 				})}
 			</ul>
